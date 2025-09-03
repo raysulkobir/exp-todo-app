@@ -1,24 +1,30 @@
-import { icons } from "@/constants/icons";
-import { images } from '@/constants/images';
-import { Image, ScrollView, Text, View } from 'react-native';
+import { Link, Stack } from 'expo-router';
+import { Image, StyleSheet, Text, View } from 'react-native';
 
-const index = () => {
+function LogoTitle() {
+    return <Image style={styles.image} source={{ uri: 'https://reactnative.dev/img/tiny_logo.png' }} />;
+}
+
+export default function Home() {
     return (
-       <View className="flex-1 bg-primary">
-            <Image source={images.bg} className="absolute w-full h-full z-0" resizeMode="cover" />
+        <View style={styles.container}>
+            {/* Per-screen header config lives here */}
+            <Stack.Screen
+                options={{
+                    title: 'My home',
+                    headerTitle: () => <LogoTitle />,
+                    // headerStyle / tint are inherited from _layout; override here if you want
+                }}
+            />
+            <Text>Home Screen</Text>
 
-            <ScrollView>
-                <Image source={icons.logo} className="w-12 h-10 mt-20 mb-5 mx-auto" />
-
-
-                {/* <ActivityIndicator size="large" color="#0000ff" className="mt-10 self-center"/> */}
-
-                <View className="mt-10">
-                    <Text className="text-lg text-white font-bold mb-3">Trending Movies</Text>
-                </View>
-            </ScrollView>
-       </View>
+            {/* Link expects a route that exists as a file in /app */}
+            <Link href="/details?name=Bacon">Go to Details</Link>
+        </View>
     );
 }
 
-export default index
+const styles = StyleSheet.create({
+    container: { flex: 1, alignItems: 'center', justifyContent: 'center' },
+    image: { width: 50, height: 50 },
+});

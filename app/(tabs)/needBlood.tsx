@@ -1,12 +1,12 @@
 import React from 'react'
 import { Text, View } from 'react-native'
 
-const profile = () => {
+const needBlood = () => {
   return (
     <View>
-      <Text>profile</Text>
+      <Text>needBlood</Text>
     </View>
   )
 }
 
-export default profile
+export default needBlood

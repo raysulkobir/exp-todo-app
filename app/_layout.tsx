@@ -44,5 +44,6 @@ export default function RootLayout() {
   >
     {/* If your tabs live under (tabs), hide header there */}
     <Stack.Screen name="(tabs)" options={{ headerShown: true }} />
+    <Stack.Screen name="home/ScheduleDonationScreen" options={{ headerShown: true, title: 'Schedule Donation' }} />
   </Stack>)
 }

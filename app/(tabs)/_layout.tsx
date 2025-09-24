@@ -79,6 +79,20 @@ export default function TabsLayout() {
                     ),
                 }}
             />
+
+            <Tabs.Screen name="profile" options={{ href: null }} />
+            <Tabs.Screen
+                name="(home)/index"
+                options={{
+                    tabBarButton: () => null, // ট্যাববারে show হবে না
+                    headerShown: false,       // হেডারও হাইড
+                }}
+            />
+
+
+
+            {/* <Tabs.Screen name="profile" options={{ href: null }} /> */}
+
         </Tabs>
     );
 }

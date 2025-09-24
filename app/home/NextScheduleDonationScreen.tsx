@@ -1,11 +1,11 @@
 import { images } from '@/constants/images';
 import { BottomTabBarHeightContext } from '@react-navigation/bottom-tabs';
-import { Link } from 'expo-router';
 import React, { useContext } from 'react';
-import { Image, Pressable, ScrollView, Text, View } from 'react-native';
+import { Image, ScrollView, Text, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
-export default function ScheduleDonationScreen() {
+
+export default function NextScheduleDonationScreen() {
   const ctxHeight = useContext(BottomTabBarHeightContext); // undefined if no tabs
   const tabBarHeight = ctxHeight ?? 0;
 
@@ -79,44 +79,51 @@ export default function ScheduleDonationScreen() {
         </View>
 
         {/* Donate / Need */}
-        <View className="flex-row gap-4 my-6">
-          <View
-            className="bg-[#e2eef8] rounded-2xl p-3 items-center flex-1"
-          >
-            <Text className="text-red-700 font-bold text-lg">Thank you for donate blood /Saving a life </Text>
+        <View className="my-6 rounded-[10px] border border-[#CCCCCC] py-5">
+          <Text className="font-bold mb-4 text-center border-b border-[#CCCCCC] pb-2">
+            Your Next Blood Donation Schedule
+          </Text>
+
+          <View className="px-5 gap-3 flex-row justify-between">
+            
+            <View className="justify-between mb-3">
+              <View className='flex-row items-center space-x-3'>
+                <Image
+                  className="w-[40px] h-[40px]"
+                  resizeMode="contain"
+                  source={images.calculatorIcon}
+                />
+                <View className='pl-2'>
+                  <Text className="text-[#000]">28 Oct, 2025</Text>
+                  <Text className="font-semibold">10:00 AM</Text>
+                </View>
+              </View>
+
+              <View className='bg-[#e2eef8] rounded-[5px] p-2 items-center justify-center mt-4'>
+                <Text>Pre/Post-donation tips</Text>
+              </View>
+            </View>
+
+
+            <View className="justify-between mb-3">
+              <View className='flex-row items-center space-x-3'>
+                <Image
+                  className="w-[40px] h-[40px]"
+                  resizeMode="contain"
+                  source={images.calculatorIcon}
+                />
+                <View className='pl-2'>
+                  <Text className="text-[#000]">Bloodline Uttara</Text>
+                  <Text className="font-semibold">10:00 AM</Text>
+                </View>
+              </View>
+
+              <View className='bg-[#e2eef8] rounded-[5px] p-2 items-center justify-center mt-4'>
+                <Text>Pre/Post-donation tips</Text>
+              </View>
+            </View>
           </View>
         </View>
-
-        {/* blood donation schedule */}
-        <Link href="/home/NextScheduleDonationScreen" asChild>
-        <Pressable className="flex-row gap-3 mt-6 border-2 border-[#e2eef8] rounded-[50px] p-4">
-          <View className="flex-1">
-            <Text className="text-end">Your Last blood {"\n"} donation date</Text>
-          </View>
-
-          <View className="flex-1">
-            <Text className="text-end  text-2xl">
-              05 January 2025
-            </Text>
-          </View>
-        </Pressable>
-        </Link>
-
-        <Link href="/home/NextScheduleDonationScreen" asChild>
-          <Pressable className="flex-row gap-3 mt-6 border-2 border-[#e2eef8] rounded-[50px] p-4">
-          <View className="flex-1">
-            <Text className="text-end">Your Last blood {"\n"} donation date</Text>
-          </View>
-
-          <View className="flex-1">
-            <Text className="text-end text-2xl">
-              15 January 2025
-            </Text>
-          </View>
-          </Pressable>
-        </Link>
-
-
       </ScrollView>
     </SafeAreaView>
   );

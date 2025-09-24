@@ -12,6 +12,7 @@ import needBloodMenuImage from "@/assets/images/needBloodMenuImage.png";
 import notification from "@/assets/images/notification.png";
 import profile from "@/assets/images/profile.png";
 import rankingGradient from "@/assets/images/rankingGradient.png";
+import timeIcon from "@/assets/images/timeIcon.png";
 
 export const images = {
   bg,
@@ -29,4 +30,5 @@ export const images = {
   needBloodMenuImage,
   calculatorIcon,
   donationDateIcon,
+  timeIcon,
 };
